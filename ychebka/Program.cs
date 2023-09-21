@@ -1,4 +1,5 @@
-﻿internal class Program
+﻿using ychebka;
+internal class Program
 {
     static void Main()
     {
@@ -26,32 +27,7 @@
                 {
                     Console.WriteLine("Оцени как ты работал от 0 - 5");
                     rab = Convert.ToInt32(Console.ReadLine());
-                    if (rab == 0) Console.WriteLine("Ты долбаеб? ЕБАШЬ РАБОТАТЬ!!!");
-                    if (rab == 1)
-                    {
-                        if (rab == 2) Console.WriteLine("держи на хлеб и на молоко) +1000");
-                        Bank += 100;
-                    }
-                    if (rab == 2)
-                    {
-                        Console.WriteLine("держи на хлеб и на молоко) +1000");
-                        Bank += 1000;
-                    }
-                    if (rab == 3)
-                    {
-                        Console.WriteLine("на в ебучку +5000");
-                        Bank += 5000;
-                    }
-                    if (rab == 4)
-                    {
-                        Console.WriteLine("нахуй столько работать? +15000");
-                        Bank += 15000;
-                    }
-                    if (rab == 5)
-                    {
-                        Console.WriteLine("БЛЯТЬ ЗАЕБАЛ, И ТАК ДЕНЕГ НЕТ +30000");
-                        Bank += 30000;
-                    }
+                    Bank = Func.IfRab(rab, Bank);
                 }
                 else Console.Write("ЕБАШЬ РАБОТАТЬ!!!");
             }
@@ -61,6 +37,6 @@
             }
             Console.WriteLine($"Name {Name}\nAge {Age}\nBank {Bank}");
         }
-
+        
     }
 }
